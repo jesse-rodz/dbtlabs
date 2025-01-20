@@ -1,71 +1,59 @@
-[name](/reference/project-configs/name): string
+name: Analytics
 
-[config-version](/reference/project-configs/config-version): 2
-[version](/reference/project-configs/version): version
+config-version: 2
 
-[profile](/reference/project-configs/profile): profilename
+packages-install-path: directorypath
 
-[model-paths](/reference/project-configs/model-paths): [directorypath]
-[seed-paths](/reference/project-configs/seed-paths): [directorypath]
-[test-paths](/reference/project-configs/test-paths): [directorypath]
-[analysis-paths](/reference/project-configs/analysis-paths): [directorypath]
-[macro-paths](/reference/project-configs/macro-paths): [directorypath]
-[snapshot-paths](/reference/project-configs/snapshot-paths): [directorypath]
-[docs-paths](/reference/project-configs/docs-paths): [directorypath]
-[asset-paths](/reference/project-configs/asset-paths): [directorypath]
+clean-targets: [directorypath]
 
-[packages-install-path](/reference/project-configs/packages-install-path): directorypath
+query-comment: string
 
-[clean-targets](/reference/project-configs/clean-targets): [directorypath]
+require-dbt-version: version-range | [version-range]
 
-[query-comment](/reference/project-configs/query-comment): string
+flags:
+  <global-configs>
 
-[require-dbt-version](/reference/project-configs/require-dbt-version): version-range | [version-range]
+dbt-cloud:
+  project-id: project_id # Required
+  defer-env-id: environment_id # Optional
 
-[flags](/reference/global-configs/project-flags):
-  [<global-configs>](/reference/global-configs/project-flags)
-
-[dbt-cloud](/docs/cloud/cloud-cli-installation):
-  [project-id](/docs/cloud/configure-cloud-cli#configure-the-dbt-cloud-cli): project_id # Required
-  [defer-env-id](/docs/cloud/about-cloud-develop-defer#defer-in-dbt-cloud-cli): environment_id # Optional
-
-[quoting](/reference/project-configs/quoting):
+quoting:
   database: true | false
   schema: true | false
   identifier: true | false
 
 metrics:
-  [<metric-configs>](/docs/build/metrics-overview)
+  <metric-configs>
 
 models:
-  [<model-configs>](/reference/model-configs)
+  <model-configs>
 
 seeds:
-  [<seed-configs>](/reference/seed-configs)
+  <seed-configs>
 
 semantic-models:
-  [<semantic-model-configs>](/docs/build/semantic-models)
+  <semantic-model-configs>
 
 saved-queries:
-  [<saved-queries-configs>](/docs/build/saved-queries)
+  <saved-queries-configs>
 
 snapshots:
-  [<snapshot-configs>](/reference/snapshot-configs)
+  <snapshot-configs>
 
 sources:
-  [<source-configs>](source-configs)
+  <source-configs>
   
 tests:
-  [<test-configs>](/reference/data-test-configs)
+  <test-configs>
 
 vars:
-  [<variables>](/docs/build/project-variables)
+  <variables>
 
-[on-run-start](/reference/project-configs/on-run-start-on-run-end): sql-statement | [sql-statement]
-[on-run-end](/reference/project-configs/on-run-start-on-run-end): sql-statement | [sql-statement]
+on-run-start: sql-statement | [sql-statement]
+on-run-end: sql-statement | [sql-statement]
 
-[dispatch](/reference/project-configs/dispatch-config):
+dispatch:
   - macro_namespace: packagename
     search_order: [packagename]
 
-[restrict-access](/docs/collaborate/govern/model-access): true | false
+restrict-access: true | false
